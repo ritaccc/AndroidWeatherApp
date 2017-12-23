@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">CityView</string>
+    <string name="search">Search</string>
+    <string name="city_name">CityName</string>
+    <string name="city_number">CityNumber</string>
+    <string name="city_list">CityList</string>
+    <string name="my_city">MyCity</string>
+    <string name="temp_isc">TempIsC</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- - - - - - - - - - - - - - - -
+          - Used by Preferences  -
+          - - - - - - - - - - - - - - - -->
+
+    <!-- Label for the show bass checkbox preference -->
+    <string name="pref_show_C_label">Show temperature as C</string>
+    <!-- Key name for storing bass in SharedPreferences -->
+    <string name="pref_show_C_key" translatable="false">show_C</string>
+
+    <!-- Summary for Checkboxes -->
+    <string name="pref_show_true">Shown</string>
+    <string name="pref_show_false">Hidden</string>
+
+</resources>

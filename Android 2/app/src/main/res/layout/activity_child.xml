@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.mengxuan.cityview.ChildActivity">
+
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                tools:context="com.example.summer.weatherapp.PageFragment">
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="13dp"
+                    android:text="City Name"
+                    android:textSize="30dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status"
+                    android:layout_alignTop="@+id/temp_s"
+                    android:text="Temp"
+                    android:textSize="20dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/city"
+                    android:layout_below="@+id/city"
+                    android:layout_marginTop="11dp"
+                    android:text="Date"
+                    android:textSize="20dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/temp_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/date"
+                    android:layout_below="@+id/date"
+                    android:layout_marginTop="14dp"
+                    android:text="Current:"
+                    android:textSize="20dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/weather"
+                    android:layout_alignTop="@+id/date"
+                    android:layout_marginStart="60dp"
+                    android:layout_toEndOf="@+id/date"
+                    android:text="Status"
+                    android:textSize="20dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/highest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp_s"
+                    android:layout_below="@+id/temp_s"
+                    android:layout_marginTop="14dp"
+                    android:text="Highest:"
+                    android:textSize="20dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/highTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status"
+                    android:layout_alignTop="@+id/highest"
+                    android:text="HighTemp"
+                    android:textSize="20dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/lowest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/highest"
+                    android:layout_below="@+id/highest"
+                    android:layout_marginTop="13dp"
+                    android:text="Lowest:"
+                    android:textSize="20dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/lowTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/highTemp"
+                    android:layout_alignTop="@+id/lowest"
+                    android:text="LowTemp"
+                    android:textSize="20dp" />
+
+                <com.mengxuan.cityview.StrokeTextView
+                    android:id="@+id/myLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/city"
+                    android:layout_toEndOf="@+id/weather"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"/>
+            </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_alignParentEnd="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="One Day Hourly Forecast"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/hr_hours"
+                    android:layout_width="51dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hours"
+                    android:textSize="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/textView10"
+                    android:layout_alignStart="@+id/textView10" />
+
+                <TextView
+                    android:id="@+id/hr_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="45dp"
+                    android:text="Temp"
+                    android:textSize="15dp"
+                    android:layout_alignBottom="@+id/hr_hours"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/hr_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/hr_temp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="50dp"
+                    android:text="Status"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:id="@+id/hr0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr_hours"
+                    android:layout_below="@+id/hr_hours"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="00:00" />
+
+                <TextView
+                    android:id="@+id/hr3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr0"
+                    android:layout_below="@+id/hr0"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="03:00" />
+
+                <TextView
+                    android:id="@+id/hr6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr3"
+                    android:layout_below="@+id/hr3"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="06:00" />
+
+                <TextView
+                    android:id="@+id/hr9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr6"
+                    android:layout_below="@+id/hr6"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="09:00" />
+
+                <TextView
+                    android:id="@+id/hr12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr9"
+                    android:layout_below="@+id/hr9"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="12:00" />
+
+                <TextView
+                    android:id="@+id/hr15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr12"
+                    android:layout_below="@+id/hr12"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="15:00" />
+
+                <TextView
+                    android:id="@+id/hr18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr15"
+                    android:layout_below="@+id/hr15"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="18:00" />
+
+                <TextView
+                    android:id="@+id/hr21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr18"
+                    android:layout_below="@+id/hr18"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="21:00" />
+
+                <TextView
+                    android:id="@+id/hr24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr21"
+                    android:layout_below="@+id/hr21"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="24:00" />
+
+                <TextView
+                    android:id="@+id/status0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr_status"
+                    android:layout_below="@+id/hr_status"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status0" />
+
+                <TextView
+                    android:id="@+id/status3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status0"
+                    android:layout_below="@+id/status0"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status3" />
+
+                <TextView
+                    android:id="@+id/status6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status3"
+                    android:layout_below="@+id/status3"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status6" />
+
+                <TextView
+                    android:id="@+id/status9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status6"
+                    android:layout_below="@+id/status6"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status9" />
+
+                <TextView
+                    android:id="@+id/status12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status9"
+                    android:layout_below="@+id/status9"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status12" />
+
+                <TextView
+                    android:id="@+id/status15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status12"
+                    android:layout_below="@+id/status12"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status15" />
+
+                <TextView
+                    android:id="@+id/status18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status15"
+                    android:layout_below="@+id/status15"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status18" />
+
+                <TextView
+                    android:id="@+id/status21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status18"
+                    android:layout_below="@+id/status18"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status21" />
+
+                <TextView
+                    android:id="@+id/status24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/status21"
+                    android:layout_below="@+id/status21"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="status24" />
+
+                <TextView
+                    android:id="@+id/temp0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr_temp"
+                    android:layout_below="@+id/hr_temp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp0" />
+
+                <TextView
+                    android:id="@+id/temp3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp0"
+                    android:layout_below="@+id/temp0"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp3" />
+
+                <TextView
+                    android:id="@+id/temp6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp3"
+                    android:layout_below="@+id/temp3"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp6" />
+
+                <TextView
+                    android:id="@+id/temp9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp6"
+                    android:layout_below="@+id/temp6"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp9" />
+
+                <TextView
+                    android:id="@+id/temp12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp9"
+                    android:layout_below="@+id/temp9"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp12" />
+
+                <TextView
+                    android:id="@+id/temp15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp12"
+                    android:layout_below="@+id/temp12"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp15" />
+
+                <TextView
+                    android:id="@+id/temp18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp15"
+                    android:layout_below="@+id/temp15"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp18" />
+
+                <TextView
+                    android:id="@+id/temp21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp18"
+                    android:layout_below="@+id/temp18"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp21" />
+
+                <TextView
+                    android:id="@+id/temp24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/temp21"
+                    android:layout_below="@+id/temp21"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="temp24" />
+
+                <TextView
+                    android:id="@+id/Next5Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/hr24"
+                    android:layout_below="@+id/hr24"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20dp"
+                    android:text="Next 4 Days" />
+
+                <TextView
+                    android:id="@+id/Next5Day_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Next5Day"
+                    android:layout_below="@+id/Next5Day"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Date" />
+
+                <TextView
+                    android:id="@+id/Next5Day_lowest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="45dp"
+                    android:text="Lowest"
+                    android:textSize="15dp"
+                    android:layout_alignBottom="@+id/Next5Day_str"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/Next5Day_highest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="45dp"
+                    android:text="Highest"
+                    android:textSize="15dp"
+                    android:layout_alignBottom="@+id/Next5Day_str"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/Next5Day_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="300dp"
+                    android:layout_marginTop="45dp"
+                    android:text="Status"
+                    android:textSize="15dp"
+                    android:layout_alignBottom="@+id/Next5Day_str"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/Day1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Next5Day_str"
+                    android:layout_below="@+id/Next5Day_str"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day1" />
+
+                <TextView
+                    android:id="@+id/Day2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day1"
+                    android:layout_below="@+id/Day1"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day2" />
+
+                <TextView
+                    android:id="@+id/Day3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day2"
+                    android:layout_below="@+id/Day2"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day3" />
+
+                <TextView
+                    android:id="@+id/Day4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day3"
+                    android:layout_below="@+id/Day3"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day4" />
+
+                <TextView
+                    android:id="@+id/Day_h1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Next5Day_highest"
+                    android:layout_below="@+id/Next5Day_highest"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day1_h" />
+
+                <TextView
+                    android:id="@+id/Day_h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_h1"
+                    android:layout_below="@+id/Day_h1"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day2_h" />
+
+                <TextView
+                    android:id="@+id/Day_h3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_h2"
+                    android:layout_below="@+id/Day_h2"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day3_h" />
+
+                <TextView
+                    android:id="@+id/Day_h4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_h3"
+                    android:layout_below="@+id/Day_h3"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day4_h" />
+
+                <TextView
+                    android:id="@+id/Day_l1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Next5Day_lowest"
+                    android:layout_below="@+id/Next5Day_lowest"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day1_l" />
+
+                <TextView
+                    android:id="@+id/Day_l2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_l1"
+                    android:layout_below="@+id/Day_l1"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day2_l" />
+
+                <TextView
+                    android:id="@+id/Day_l3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_l2"
+                    android:layout_below="@+id/Day_l2"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day3_l" />
+
+                <TextView
+                    android:id="@+id/Day_l4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_l3"
+                    android:layout_below="@+id/Day_l3"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day4_l" />
+
+
+                <TextView
+                    android:id="@+id/Day_s1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Next5Day_status"
+                    android:layout_below="@+id/Next5Day_status"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day1_s" />
+
+                <TextView
+                    android:id="@+id/Day_s2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_s1"
+                    android:layout_below="@+id/Day_s1"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day2_s" />
+
+                <TextView
+                    android:id="@+id/Day_s3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_s2"
+                    android:layout_below="@+id/Day_s2"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day3_s" />
+
+                <TextView
+                    android:id="@+id/Day_s4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/Day_s3"
+                    android:layout_below="@+id/Day_s3"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:text="Day4_s" />
+
+
+            </RelativeLayout>
+        </ScrollView>
+        </RelativeLayout>
+    </ViewFlipper>
+</android.support.constraint.ConstraintLayout>
